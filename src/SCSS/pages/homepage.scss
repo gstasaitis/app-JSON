@@ -1,0 +1,92 @@
+.homepage {
+    width: 90%;
+    display: flex;
+    margin: auto;
+    border-radius: 5px 5px 0px 0px;
+    margin-top: 150px;
+    background: $white;
+
+    .homecontent {
+        display: flex;
+        margin: auto;
+        padding: 70px;
+        text-align: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+.whyus{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 100%;
+    padding: 55px 0;
+
+    .cars, .pricing, .employees, .safepay {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto;
+        width: 25%;
+        padding: 25px 0;
+
+        svg {
+            text-align: center;
+            margin: auto;
+        }
+    } 
+    .cars {
+        background: $purple;
+        color: $white;
+        .blue {
+            font-size: 5em;
+            font-weight: 500;
+            padding: 20px;
+            color: $lightest;
+        }
+        svg {
+            font-size: 4em;
+        }
+    }
+    .pricing {
+        background: $lightest;
+        color: $white;
+        .blue {
+            font-size: 5em;
+            font-weight: 500;
+            padding: 20px;
+            color: $purple;
+        }
+        svg {
+            font-size: 4em;
+        }
+    }
+    .employees {
+        background: $lighter;
+        color: $white;
+        .blue {
+            font-size: 5em;
+            font-weight: 500;
+            padding: 20px;
+            color: $dark;
+        }
+        svg {
+            font-size: 4em;
+        }
+    }
+    .safepay {
+        background: $dark;
+        color: $white;
+        .blue {
+            font-size: 5em;
+            font-weight: 500;
+            padding: 20px;
+            color: $lightest;
+        }
+        svg {
+            font-size: 4em;
+        }
+    }
+}

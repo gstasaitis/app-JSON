@@ -1,0 +1,14 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 1000vh;
+    font-family: 'Roboto', sans-serif;
+    // background: url(./src/media/images/topsection.jpg) no-repeat, -webkit-linear-gradient(to bottom, #89253e, #3a6186);
+    background: url(./src/media/images/topsection.jpg) no-repeat, linear-gradient(to bottom, #1b1257, #3a6186);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
