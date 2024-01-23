@@ -1,6 +1,7 @@
 
 import Navbar from "./modules/Navbar"
 import TopSection from "./modules/TopSection"
+import CarsSection from "./pages/CarsSection"
 import HomePage from "./pages/HomePage"
 
 
@@ -12,7 +13,7 @@ function App() {
     <Navbar/>
     <TopSection/>
     <HomePage/>
-
+    <CarsSection/>
     </>
   )
 }

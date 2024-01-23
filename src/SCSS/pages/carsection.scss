@@ -1,0 +1,42 @@
+.carsection{
+    width: 90%;
+    margin: auto;
+    background: $white;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+
+    button{
+        margin: auto;
+        padding: 20px;
+        align-items: center;
+        width: 50%;
+    }
+    .carsbar {
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+        background: $lightest;
+
+        // h1 {
+        //     font-size: 2em;
+        //     color: $purple;
+        // }
+
+        .bar {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: $white;
+            padding: 20px 0;
+
+            svg {
+                font-size: 1.5em;
+            }
+        }
+    }
+    .carscontent{
+        background: $white;
+    }
+}
