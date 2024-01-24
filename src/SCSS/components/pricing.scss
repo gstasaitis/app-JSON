@@ -1,0 +1,175 @@
+.pricinghead {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    background: $purple;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    padding: 25px 0;
+    color: $white;
+}
+
+.pricinglist {
+    align-items: center;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    background: $purple;
+    margin-top: 50px;
+    border-radius: 10px 10px 0 0;
+
+}
+
+#pricing-table {
+    margin: 50px;
+    text-align: center;
+    zoom: 1;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #pricing-table:before, #pricing-table:after {
+    content: "";
+    display: table
+  }
+
+  #pricing-table:after {
+    clear: both
+  }
+
+  /* --------------- */ 
+
+  #pricing-table .plan {
+    background: #fff;      
+    border: 1px solid #ddd;
+    color: #333;
+    padding: 20px;
+    width: 30%;
+    float: left;
+    _display: inline; /* IE6 double margin fix */
+    position: relative;
+    margin: 0 5px;
+    box-shadow: 0 2px 2px -1px rgba(0,0,0,.3);    
+  }
+
+  #pricing-table .plan:after {
+    z-index: -1; 
+    position: absolute; 
+    content: "";
+    bottom: 10px;
+    right: 4px;
+    width: 80%; 
+    top: 80%; 
+    box-shadow: 0 12px 5px rgba(0, 0, 0, .3);
+    transform: rotate(3deg);  
+  } 
+  
+  #pricing-table .popular-plan {
+    top: -20px;
+    padding: 60px 20px;   
+  }
+  
+
+  #pricing-table .header {
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 40px;
+    margin: -20px -20px 20px -20px;
+    border-bottom: 8px solid;
+    background-color: #eee;
+    background-image: linear-gradient(#fff, #eee);
+  }
+
+  #pricing-table .header:after {
+    position: absolute;
+    bottom: -8px; left: 0;
+    height: 3px; width: 100%;
+  }
+  
+  #pricing-table .popular-plan .header {
+    margin-top: -40px;
+    padding-top: 60px;    
+  }
+
+  #pricing-table .plan1 .header{
+    border-bottom-color: $lighter;
+  }
+
+  #pricing-table .plan2 .header{
+    border-bottom-color: $lightest;
+  }
+
+  #pricing-table .plan3 .header{
+    border-bottom-color: $lighter;
+  }
+
+  /* --------------- */
+
+  #pricing-table .price{
+    font-size: 45px;
+  }
+
+  #pricing-table .monthly{
+    font-size: 13px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #999;
+  }
+
+  /* --------------- */
+
+  #pricing-table ul {
+    margin: 20px 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  #pricing-table li {
+    padding: 20px 0;
+  }
+  
+  /* --------------- */
+    
+  #pricing-table .signup {
+    width: 80%;
+    position: relative;
+    padding: 10px 20px;
+    color: #fff;
+    font: bold 14px Arial, Helvetica;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;       
+    background-color: red;
+    border-radius: 3px;     
+    text-shadow: 0 -1px 0 rgba(0,0,0,.15);
+    opacity: .9;       
+  }
+
+  #pricing-table .signup:hover {
+    opacity: 1;       
+  }
+
+  #pricing-table .signup:active {
+    box-shadow: 0 2px 2px rgba(0,0,0,.3) inset;       
+  }     
+
+  #pricing-table .plan1 .signup{
+    background: $lighter;
+  }
+
+  #pricing-table .plan2 .signup{
+    background: $lightest;
+  }
+
+  #pricing-table .plan3 .signup{
+    background: $lighter;
+  }

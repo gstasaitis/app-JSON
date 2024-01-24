@@ -1,4 +1,5 @@
 import CarSlideShow from "../modules/CarSlideShow";
+import Pricing from "../modules/Pricing";
 
 const CarsSection = () => {
   return (
@@ -13,6 +14,7 @@ const CarsSection = () => {
             </div>
         </div>
             <button>RENT NOW!</button>
+            <Pricing/>
     </div>
     </>
   )

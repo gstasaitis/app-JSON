@@ -1,16 +1,14 @@
 .video {
-    width: 90%;
+    max-width: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: auto;
     display: flex;
-    background: white;
 
     video{
         width: 100%;
         margin: auto;
-        padding-bottom: 20px;
     }
 
 
