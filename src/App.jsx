@@ -4,6 +4,8 @@ import TopSection from "./modules/TopSection"
 import CarsSection from "./modules/CarsSection"
 import HomePage from "./pages/HomePage"
 import EmployeesSection from "./modules/EmployeesSection"
+import FAQSection from "./modules/FAQSection"
+import ContactUsSection from "./modules/ContactUsSection"
 
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
     <HomePage/>
     <CarsSection/>
     <EmployeesSection/>
+    <FAQSection/>
+    <ContactUsSection/>
     </>
   )
 }

@@ -13,7 +13,7 @@ const HomePage = () => {
             <div className="carrental">
             <h1>Horiz<GiCartwheel />n</h1>
             <h2>Car rental with best customer service! </h2>
-            <hr />
+
             <p>At Horizon, we are not just a car rental company, we are a family of car enthusiasts and talented individuals who are passionate about providing the best car rental experience.
             Our team is made up of the most dedicated and fun-loving employees who are always ready to go the extra mile to make your car rental experience unforgettable.
             Join us and become a part of our dynamic team, or add your car to our fleet and start earning today!</p>

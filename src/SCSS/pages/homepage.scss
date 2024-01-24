@@ -5,7 +5,8 @@
     margin: auto;
     border-radius: 10px 10px 0px 0px;
     margin-top: 150px;
-    background: $white;
+    background: $dark;
+    color: $white;
     overflow: hidden;
 
     .homecontent {
@@ -27,13 +28,18 @@
             font-size: 5em;
 
             svg {
-                color: $purple;
+                color: $lightest;
                 animation: rotate 5s normal linear infinite;
 
             }
         }
 
-        h1, h2, p{
+        h1, h2{
+            padding: 20px;
+            text-transform: uppercase;
+        }
+        p {
+            text-transform: normal;
             padding: 20px;
         }
     }
