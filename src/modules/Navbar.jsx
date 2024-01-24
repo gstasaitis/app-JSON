@@ -58,7 +58,6 @@ return (
         <li className={activeSection === "home" ? "active" : ""}>Home</li>
         <li className={activeSection === "cars" ? "active" : ""}>Cars</li>
         <li className={activeSection === "team" ? "active" : ""}>Team</li>
-        <li className={activeSection === "feedback" ? "active" : ""}>Feedback</li>
         <li className={activeSection === "faq" ? "active" : ""}>FAQ</li>
         <li className={activeSection === "contact" ? "active" : ""}>Contact US</li>
       </ul>

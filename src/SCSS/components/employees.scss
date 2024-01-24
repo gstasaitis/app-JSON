@@ -1,0 +1,25 @@
+.employeeslist {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .teamhead {
+        width: 100%;
+        background: $dark;
+        color: $white;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .cards {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        padding: 20px;
+        width: 100%;
+        background-color: $dark;
+    }
+}

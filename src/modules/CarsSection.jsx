@@ -1,5 +1,5 @@
-import CarSlideShow from "../modules/CarSlideShow";
-import Pricing from "../modules/Pricing";
+import CarSlideShow from "./CarSlideShow";
+import Pricing from "./Pricing";
 
 const CarsSection = () => {
   return (

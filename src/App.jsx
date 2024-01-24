@@ -1,8 +1,9 @@
 
 import Navbar from "./modules/Navbar"
 import TopSection from "./modules/TopSection"
-import CarsSection from "./pages/CarsSection"
+import CarsSection from "./modules/CarsSection"
 import HomePage from "./pages/HomePage"
+import EmployeesSection from "./modules/EmployeesSection"
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
     <TopSection/>
     <HomePage/>
     <CarsSection/>
+    <EmployeesSection/>
     </>
   )
 }
