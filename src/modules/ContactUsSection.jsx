@@ -16,7 +16,7 @@ const ContactUsSection = () => {
                         </div>
                         <div className="fieldhalf">
                             <label htmlFor="email">Email</label>
-                            <input type="text" name="email" id="email" />
+                            <input type="email" name="email" id="email" />
                         </div>
                         </div>
                 </div>
@@ -25,7 +25,7 @@ const ContactUsSection = () => {
                         <textarea name="message" id="message" rows="6"></textarea>
                     </div>
                     <ul className="actions">
-                        <li ><button type="submit" className="primary clearbutton">SUBMIT</button></li>
+                        <li><button type="submit" className="primary clearbutton">SUBMIT</button></li>
                         <li><button className="clearbutton" type="reset">CLEAR</button></li>
                     </ul>
             </form>
