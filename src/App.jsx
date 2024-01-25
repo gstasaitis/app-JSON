@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage"
 import EmployeesSection from "./modules/EmployeesSection"
 import FAQSection from "./modules/FAQSection"
 import ContactUsSection from "./modules/ContactUsSection"
+import Footer from "./modules/Footer"
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
     <EmployeesSection/>
     <FAQSection/>
     <ContactUsSection/>
+    <Footer/>
     </>
   )
 }

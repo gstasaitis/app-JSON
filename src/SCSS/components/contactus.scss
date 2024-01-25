@@ -1,0 +1,176 @@
+.contactus {
+    padding: 20px 0;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    background: $dark;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    .form {
+        width: 32%;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid rgb(176, 128, 240);
+
+        h1 {
+            color: $white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .fields {
+            width: 100%;
+            display: flex;
+            margin: auto;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        .formtop {
+            min-width: 100%;
+            display: flex;
+            flex-direction: row;
+
+            .fieldhalf {
+                display: flex;
+                padding: 10px;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 50%;
+                gap: 10px;
+
+                input {
+                    min-width: 100%;
+                    padding: 5px 0;
+                    padding: 10px;
+                    background: #20054e;
+                    border-radius: 5px;
+
+                    &:focus {
+                        outline: 2px solid $purple;
+                    }
+                }
+
+                label {
+                    font-weight: 300;
+                    font-size: 1.5em;
+                    color: white;
+                }
+            }
+        }
+
+        .field {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px;
+            color: $white;
+        }
+
+        ul {
+            color: $white;
+
+            li{
+                padding: 0 10px;
+                list-style: none;
+            }
+        }
+
+        .actions {
+            display: flex;
+            flex-direction: row;
+        }
+        input {
+            padding: 5px 0;
+            color: $white;
+            border: none;
+        }
+    
+        label {
+            font-weight: 300;
+            font-size: 1.5em;
+            color: white;
+        }
+    
+        textarea {
+            min-width: 100%;
+            min-height: 200px;
+            padding: 5px 0;
+            background: #20054e;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+    
+            &:focus {
+                outline: 2px solid $purple;
+            }
+        }
+    }
+
+
+    .contacts {
+        width: 32%;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        color: $white;
+        border-right: 1px solid rgb(176, 128, 240);
+
+        h1 {
+            color: $white;
+            text-align: center;
+            padding: 10px 0;  
+        }
+
+        .contactsection {
+            display: flex;
+            flex-direction: column;
+            padding: 15px 15px;
+
+            svg { 
+                font-size: 2em;
+                margin: 0 20px;
+            }
+
+            .email, .phone, .address {
+                padding: 20px 0;
+                display: flex;
+                flex-direction: row;
+            }
+        }
+    }
+
+    .map {
+        width: 32%;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+
+
+        h1 {
+            color: $white;
+            text-align: center;
+            padding: 10px 0;  
+        }
+
+        .iframe {
+            width: 100%;
+            padding: 0 10px;
+            display: flex;
+            margin: auto;
+        }
+
+        iframe {
+            width: 100%;
+            height: 300px;
+        }
+    }
+}
+
+
