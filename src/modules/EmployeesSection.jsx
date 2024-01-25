@@ -9,7 +9,7 @@ const EmployeesSection = () => {
       <div className="cards">
         <Team/>
       </div>
-        <button>JOIN OUR TEAM NOW!</button>
+        <button className="clearbutton">JOIN OUR TEAM NOW!</button>
     </div>
   )
 }

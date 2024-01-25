@@ -13,7 +13,7 @@ const CarsSection = () => {
                 <CarSlideShow/>
             </div>
         </div>
-            <button>RENT NOW!</button>
+            <button className="button">RENT NOW!</button>
             <Pricing/>
     </div>
     </>

@@ -25,8 +25,8 @@ const ContactUsSection = () => {
                         <textarea name="message" id="message" rows="6"></textarea>
                     </div>
                     <ul className="actions">
-                        <li className="button"><button type="submit" className="primary">SUBMIT</button></li>
-                        <li className="buttonclear"><button type="reset">CLEAR</button></li>
+                        <li ><button type="submit" className="primary clearbutton">SUBMIT</button></li>
+                        <li><button className="clearbutton" type="reset">CLEAR</button></li>
                     </ul>
             </form>
         </div>
