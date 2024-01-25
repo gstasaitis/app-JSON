@@ -12,7 +12,7 @@ const Team = () => {
                 <div className="teamcard__content-inner">
                     <div className="teamcard__title">
                         <p className="fullname">
-                        Mr Nigga
+                        Morgan Freeman
                         </p>
                         </div>
                         <div className="teamcard__description">
