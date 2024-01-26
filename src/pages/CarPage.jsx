@@ -11,19 +11,30 @@ const CarPage = () => {
     <>
     <div className="carnav">
         <Link to="/">
-        <button className="button">Go Back</button>
+        <button className="button">
+            <span>Go Back</span></button>
         </Link>
         <Link to="/add-car">
-        <button className="button">Add your Car!</button>
+        <button className="button">
+            <span>Add your Car!</span>
+            </button>
         </Link>
     </div>
     <div className="carpage">
     <div className="filtersection">
         <div className="buttons">
-            <button className="button all active">All</button>
-            <button className="button white">SUV</button>
-            <button className="button grey">BASIC</button>
-            <button className="button blue">SPORTS</button>
+            <button className="button all active">
+                <span>All</span>
+                </button>
+            <button className="button white">
+                <span>SUV</span>
+                </button>
+            <button className="button grey">
+                <span>BASIC</span>
+                </button>
+            <button className="button blue">
+                <span>SPORTS</span>
+            </button>
         </div>
     </div>
         <div className="grid">

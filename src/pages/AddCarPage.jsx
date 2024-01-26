@@ -32,7 +32,9 @@ const AddCarPage = () => {
     <>
     <div className="carnav">
         <Link to="/cars">
-          <button className="button">Go Back</button>
+          <button className="button">
+            <span>Go Back</span>
+          </button>
         </Link>
     </div>
     <div className="add-car-form">

@@ -5,7 +5,9 @@ const AddTeamPage = () => {
     <>
     <div className="carnav">
     <Link to="/team">
-        <button className="button">Go Back</button>
+        <button className="button">
+            <span>Go Back</span>
+        </button>
     </Link>
     </div>
     <div className="applyform">

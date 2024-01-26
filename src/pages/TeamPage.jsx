@@ -10,10 +10,14 @@ const TeamPage = () => {
     <div className='team-page'>
         <div className="carnav">
         <Link to="/">
-            <button className="button">Go Back</button>
+            <button className="button">
+                <span>Go Back</span>
+            </button>
         </Link>
         <Link to="/add-team">
-            <button className="button">Join our team!</button>
+            <button className="button">
+                <span>Join our team!</span>
+            </button>
         </Link>
         </div>
     </div>
