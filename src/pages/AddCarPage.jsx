@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const AddCarPage = () => {
 
@@ -30,7 +31,9 @@ const AddCarPage = () => {
   return (
     <>
     <div className="carnav">
-        <button className="button">Go Back</button>
+        <Link to="/cars">
+          <button className="button">Go Back</button>
+        </Link>
     </div>
     <div className="add-car-form">
     <form onSubmit={handleSubmit}>

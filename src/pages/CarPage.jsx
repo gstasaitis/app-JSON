@@ -4,13 +4,18 @@ import { MdOutlineAirlineSeatLegroomExtra } from "react-icons/md";
 import { TbEngine } from "react-icons/tb";
 import { FaCalendarAlt } from "react-icons/fa";
 import { FaEuroSign } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const CarPage = () => {
   return (
     <>
     <div className="carnav">
+        <Link to="/">
         <button className="button">Go Back</button>
+        </Link>
+        <Link to="/add-car">
         <button className="button">Add your Car!</button>
+        </Link>
     </div>
     <div className="carpage">
     <div className="filtersection">

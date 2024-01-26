@@ -17,7 +17,7 @@ const FAQSection = () => {
     };
 
     return (
-        <div className="faqsection">
+        <div id='faq' className="faqsection">
             <div className="faqhead">
                 <h1>FAQ</h1>
             </div>

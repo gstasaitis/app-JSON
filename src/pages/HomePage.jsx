@@ -8,7 +8,7 @@ import HomeVideo from "../modules/HomeVideo";
 const HomePage = () => {
   return (
     <>
-    <div className="homepage">
+    <div id="home" className="homepage">
         <div className="homecontent">
             <div className="carrental">
             <h1>Horiz<GiCartwheel />n</h1>

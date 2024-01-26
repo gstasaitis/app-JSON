@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom";
 import CarSlideShow from "./CarSlideShow";
 import Pricing from "./Pricing";
 
 const CarsSection = () => {
   return (
     <>
-    <div className="carsection">
+    <div id="cars" className="carsection">
         <div className="carsbar">
             <div className="bar">
                 <h1>Our Top Cars</h1>
@@ -13,7 +14,11 @@ const CarsSection = () => {
                 <CarSlideShow/>
             </div>
         </div>
-            <button className="button">RENT NOW!</button>
+        <div className="rentcars">
+        <Link to="/cars">
+            <button className="btn">RENT NOW!</button>
+        </Link>
+        </div>
             <Pricing/>
     </div>
     </>

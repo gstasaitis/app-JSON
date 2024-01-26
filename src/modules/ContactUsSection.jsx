@@ -4,7 +4,7 @@ import { FaHome } from "react-icons/fa";
 
 const ContactUsSection = () => {
   return (
-    <div className="contactus">
+    <div id="contact" className="contactus">
         <div className="form">
             <h1>Contact Us!</h1>
             <form method="post" action="#">

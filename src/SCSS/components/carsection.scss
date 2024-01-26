@@ -6,6 +6,17 @@
     flex-direction: column;
     border-radius: 10px 10px 0 0;
 
+    .rentcars {
+        display: flex;
+        margin: auto;
+        width: 100%;
+        a{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            text-decoration: none;
+        }
+    }
 
     button{
         margin: auto;
@@ -17,11 +28,6 @@
         width: 100%;
         border-radius: 10px 10px 0 0;
         background: $lightest;
-
-        // h1 {
-        //     font-size: 2em;
-        //     color: $purple;
-        // }
 
         .bar {
             width: 100%;
