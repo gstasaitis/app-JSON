@@ -8,7 +8,9 @@
 // import ContactUsSection from "./modules/ContactUsSection"
 // import Footer from "./modules/Footer"
 
-import CarPage from "./pages/CarPage"
+import AddCarPage from "./pages/AddCarPage"
+// import CarPage from "./pages/CarPage"
+
 
 
 function App() {
@@ -24,7 +26,10 @@ function App() {
     <FAQSection/>
     <ContactUsSection/>
     <Footer/> */}
-    <CarPage/>
+
+
+    {/* <CarPage/> */}
+    <AddCarPage/>
     </>
   )
 }

@@ -45,7 +45,9 @@ const CarPage = () => {
                 <div className="carname">
                 <h2>Peugeot 3008</h2>
                 <img src="https://donauto.lt/img/65e2e783eb06b9048689eef0a901407c.webp" alt="" />
-
+                    <div className="controls">
+                        <button className="fifth">DELETE</button>
+                    </div>
                 </div>
                 <div className="description">
                     <p><FaEuroSign /> 37/24h</p>
@@ -61,6 +63,9 @@ const CarPage = () => {
                 <div className="carname">
                 <h2>Peugeot 3008</h2>
                 <img src="https://donauto.lt/img/65e2e783eb06b9048689eef0a901407c.webp" alt="" />
+                    <div className="controls">
+                        <button className="fifth">DELETE</button>
+                    </div>
                 </div>
                 <div className="description">
                     <p><FaEuroSign /> 37/24h</p>
@@ -76,6 +81,9 @@ const CarPage = () => {
                 <div className="carname">
                 <h2>Peugeot 3008</h2>
                 <img src="https://donauto.lt/img/65e2e783eb06b9048689eef0a901407c.webp" alt="" />
+                    <div className="controls">
+                        <button className="fifth">DELETE</button>
+                    </div>
                 </div>
                 <div className="description">
                     <p><FaEuroSign /> 37/24h</p>
@@ -87,112 +95,8 @@ const CarPage = () => {
                     <p><MdOutlineAirlineSeatLegroomExtra /> 5</p>
                 </div>
             </div>
-            <div className="car">
-                <div className="carname">
-                <h2>Peugeot 3008</h2>
-                <img src="https://donauto.lt/img/65e2e783eb06b9048689eef0a901407c.webp" alt="" />
-                </div>
-                <div className="description">
-                    <p><FaEuroSign /> 37/24h</p>
-                    <p><GiCarWheel/> SUV</p>
-                    <p><FaCalendarAlt /> 2023</p>
-                    <p><TbEngine /> 1.9 l</p>
-                    <p><BsFillFuelPumpFill /> Petrol</p>
-                    <p><GiGearStick /> Automatic</p>
-                    <p><MdOutlineAirlineSeatLegroomExtra /> 5</p>
-                </div>
-            </div>
-            <div className="car">
-                <div className="carname">
-                <h2>Peugeot 3008</h2>
-                <img src="https://donauto.lt/img/65e2e783eb06b9048689eef0a901407c.webp" alt="" />
-                </div>
-                <div className="description">
-                    <p><FaEuroSign /> 37/24h</p>
-                    <p><GiCarWheel/> SUV</p>
-                    <p><FaCalendarAlt /> 2023</p>
-                    <p><TbEngine /> 1.9 l</p>
-                    <p><BsFillFuelPumpFill /> Petrol</p>
-                    <p><GiGearStick /> Automatic</p>
-                    <p><MdOutlineAirlineSeatLegroomExtra /> 5</p>
-                </div>
-            </div>
-            <div className="car">
-                <div className="carname">
-                <h2>Peugeot 3008</h2>
-                <img src="https://donauto.lt/img/65e2e783eb06b9048689eef0a901407c.webp" alt="" />
-                </div>
-                <div className="description">
-                    <p><FaEuroSign /> 37/24h</p>
-                    <p><GiCarWheel/> SUV</p>
-                    <p><FaCalendarAlt /> 2023</p>
-                    <p><TbEngine /> 1.9 l</p>
-                    <p><BsFillFuelPumpFill /> Petrol</p>
-                    <p><GiGearStick /> Automatic</p>
-                    <p><MdOutlineAirlineSeatLegroomExtra /> 5</p>
-                </div>
-            </div>
-            <div className="car">
-                <div className="carname">
-                <h2>Peugeot 3008</h2>
-                <img src="https://donauto.lt/img/65e2e783eb06b9048689eef0a901407c.webp" alt="" />
-                </div>
-                <div className="description">
-                    <p><FaEuroSign /> 37/24h</p>
-                    <p><GiCarWheel/> SUV</p>
-                    <p><FaCalendarAlt /> 2023</p>
-                    <p><TbEngine /> 1.9 l</p>
-                    <p><BsFillFuelPumpFill /> Petrol</p>
-                    <p><GiGearStick /> Automatic</p>
-                    <p><MdOutlineAirlineSeatLegroomExtra /> 5</p>
-                </div>
-            </div>
-            <div className="car">
-                <div className="carname">
-                <h2>Peugeot 3008</h2>
-                <img src="https://donauto.lt/img/65e2e783eb06b9048689eef0a901407c.webp" alt="" />
-                </div>
-                <div className="description">
-                    <p><FaEuroSign /> 37/24h</p>
-                    <p><GiCarWheel/> SUV</p>
-                    <p><FaCalendarAlt /> 2023</p>
-                    <p><TbEngine /> 1.9 l</p>
-                    <p><BsFillFuelPumpFill /> Petrol</p>
-                    <p><GiGearStick /> Automatic</p>
-                    <p><MdOutlineAirlineSeatLegroomExtra /> 5</p>
-                </div>
-            </div>
-            <div className="car">
-                <div className="carname">
-                <h2>Peugeot 3008</h2>
-                <img src="https://donauto.lt/img/65e2e783eb06b9048689eef0a901407c.webp" alt="" />
-                </div>
-                <div className="description">
-                    <p><FaEuroSign /> 37/24h</p>
-                    <p><GiCarWheel/> SUV</p>
-                    <p><FaCalendarAlt /> 2023</p>
-                    <p><TbEngine /> 1.9 l</p>
-                    <p><BsFillFuelPumpFill /> Petrol</p>
-                    <p><GiGearStick /> Automatic</p>
-                    <p><MdOutlineAirlineSeatLegroomExtra /> 5</p>
-                </div>
-            </div>
-            <div className="car">
-                <div className="carname">
-                <h2>Peugeot 3008</h2>
-                <img src="https://donauto.lt/img/65e2e783eb06b9048689eef0a901407c.webp" alt="" />
-                </div>
-                <div className="description">
-                    <p><FaEuroSign /> 37/24h</p>
-                    <p><GiCarWheel/> SUV</p>
-                    <p><FaCalendarAlt /> 2023</p>
-                    <p><TbEngine /> 1.9 l</p>
-                    <p><BsFillFuelPumpFill /> Petrol</p>
-                    <p><GiGearStick /> Automatic</p>
-                    <p><MdOutlineAirlineSeatLegroomExtra /> 5</p>
-                </div>
-            </div>
-
+            
+          
         </div>
 </div>
     </>

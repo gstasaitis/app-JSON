@@ -57,6 +57,7 @@
     .car {
         width: 30%;
         display: flex;
+        flex-wrap: nowrap;
         background: rgba(255, 255, 255, 0.6);
         box-shadow: 0px 0px 7px 2px gray inset;
 
