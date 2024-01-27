@@ -5,9 +5,62 @@ import { TbEngine } from "react-icons/tb";
 import { FaCalendarAlt } from "react-icons/fa";
 import { FaEuroSign } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import Loading from "../modules/Loading";
 
 const CarPage = () => {
-  return (
+
+    const [carsList, setCarsList] = useState([])
+
+    const [filteredCars, setFilteredCars] = useState([]);
+    const [filterCriteria, setFilterCriteria] = useState("All");
+
+    const fetchCarData = () => {
+        fetch("http://localhost:4000/cars")
+        .then((res) => res.json())
+        .then((data) => {
+            setCarsList(data);
+            setFilteredCars(data);
+        });
+    };
+
+    useEffect(() => {
+        const savedFilterCriteria = localStorage.getItem("filterCriteria");
+        if (savedFilterCriteria) {
+        setFilterCriteria(savedFilterCriteria);
+        }
+    
+        fetchCarData();
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem("filterCriteria", filterCriteria);
+        handleFilter(filterCriteria);
+    }, [filterCriteria]);
+
+    const handleDelete = (id) => {
+        fetch(`http://localhost:4000/cars/${id}`, { method: 'DELETE' })
+            .then(() => {
+            setCarsList((prevCarsList) => prevCarsList.filter((car) => car.id !== id));
+            })
+            .catch((error) => {
+            console.error('Error deleting car:', error.message);
+            });
+        };
+
+        const handleFilter = (criteria) => {
+            setFilterCriteria(criteria);
+        
+            if (criteria === "All") {
+                setFilteredCars(carsList);
+            } else {
+                const filtered = carsList.filter((car) => car.carType === criteria);
+                setFilteredCars(filtered);
+            }
+        };
+    
+
+return (
     <>
     <div className="carnav">
         <Link to="/">
@@ -21,102 +74,59 @@ const CarPage = () => {
         </Link>
     </div>
     <div className="carpage">
-    <div className="filtersection">
-        <div className="buttons">
-            <button className="button all active">
+        <div className="filtersection">
+            <div className="buttons">
+            <button
+                className={`button all ${filterCriteria === "All" ? "active" : ""}`}
+                onClick={() => handleFilter("All")}>
                 <span>All</span>
-                </button>
-            <button className="button white">
+            </button>
+            <button
+                className={`button ${filterCriteria === "SUV" ? "active" : ""}`}
+                onClick={() => handleFilter("SUV")}>
                 <span>SUV</span>
-                </button>
-            <button className="button grey">
+            </button>
+            <button
+                className={`button ${filterCriteria === "Basic" ? "active" : ""}`}
+                onClick={() => handleFilter("Basic")}>
                 <span>BASIC</span>
-                </button>
-            <button className="button blue">
+            </button>
+            <button
+                className={`button ${filterCriteria === "Sports" ? "active" : ""}`}
+                onClick={() => handleFilter("Sports")}>
                 <span>SPORTS</span>
             </button>
         </div>
     </div>
         <div className="grid">
-
-            <div className="car">
+        {!filteredCars ? (
+            <Loading/> 
+        ) : (
+            filteredCars.map((cars) => (
+            <div className="car" key={cars.id}>
                 <div className="carname">
-                <h2>Peugeot 3008</h2>
-                <img src="https://donauto.lt/img/65e2e783eb06b9048689eef0a901407c.webp" alt="" />
+                <img src={cars.carPicture} alt={cars.carName} />
+                <h2>{cars.carName}</h2>
                     <div className="controls">
-                        <button className="fifth">DELETE</button>
+                        <button onClick={() => handleDelete(cars.id)} className="fifth">DELETE</button>
                     </div>
                 </div>
                 <div className="description">
-                    <p><FaEuroSign /> 37/24h</p>
-                    <p><GiCarWheel/> SUV</p>
-                    <p><FaCalendarAlt /> 2023</p>
-                    <p><TbEngine /> 1.9 l</p>
-                    <p><BsFillFuelPumpFill /> Petrol</p>
-                    <p><GiGearStick /> Automatic</p>
-                    <p><MdOutlineAirlineSeatLegroomExtra /> 5</p>
+                    <p><FaEuroSign /> {cars.price}/24h</p>
+                    <p><GiCarWheel/> {cars.carType}</p>
+                    <p><FaCalendarAlt /> {cars.carYear}</p>
+                    <p><TbEngine /> {cars.engineLiters}l</p>
+                    <p><BsFillFuelPumpFill /> {cars.gasType}</p>
+                    <p><GiGearStick /> {cars.transmissionType}</p>
+                    <p><MdOutlineAirlineSeatLegroomExtra /> {cars.seatCount}</p>
                 </div>
             </div>
-            <div className="car">
-                <div className="carname">
-                <h2>Peugeot 3008</h2>
-                <img src="https://donauto.lt/img/65e2e783eb06b9048689eef0a901407c.webp" alt="" />
-                    <div className="controls">
-                        <button className="fifth">DELETE</button>
-                    </div>
-                </div>
-                <div className="description">
-                    <p><FaEuroSign /> 37/24h</p>
-                    <p><GiCarWheel/> SUV</p>
-                    <p><FaCalendarAlt /> 2023</p>
-                    <p><TbEngine /> 1.9 l</p>
-                    <p><BsFillFuelPumpFill /> Petrol</p>
-                    <p><GiGearStick /> Automatic</p>
-                    <p><MdOutlineAirlineSeatLegroomExtra /> 5</p>
-                </div>
-            </div>
-            <div className="car">
-                <div className="carname">
-                <h2>Peugeot 3008</h2>
-                <img src="https://donauto.lt/img/65e2e783eb06b9048689eef0a901407c.webp" alt="" />
-                    <div className="controls">
-                        <button className="fifth">DELETE</button>
-                    </div>
-                </div>
-                <div className="description">
-                    <p><FaEuroSign /> 37/24h</p>
-                    <p><GiCarWheel/> SUV</p>
-                    <p><FaCalendarAlt /> 2023</p>
-                    <p><TbEngine /> 1.9 l</p>
-                    <p><BsFillFuelPumpFill /> Petrol</p>
-                    <p><GiGearStick /> Automatic</p>
-                    <p><MdOutlineAirlineSeatLegroomExtra /> 5</p>
-                </div>
-            </div>
-            <div className="car">
-                <div className="carname">
-                <h2>Peugeot 3008</h2>
-                <img src="https://donauto.lt/img/65e2e783eb06b9048689eef0a901407c.webp" alt="" />
-                    <div className="controls">
-                        <button className="fifth">DELETE</button>
-                    </div>
-                </div>
-                <div className="description">
-                    <p><FaEuroSign /> 37/24h</p>
-                    <p><GiCarWheel/> SUV</p>
-                    <p><FaCalendarAlt /> 2023</p>
-                    <p><TbEngine /> 1.9 l</p>
-                    <p><BsFillFuelPumpFill /> Petrol</p>
-                    <p><GiGearStick /> Automatic</p>
-                    <p><MdOutlineAirlineSeatLegroomExtra /> 5</p>
-                </div>
-            </div>
-            
-          
+            ))
+            )}
         </div>
 </div>
     </>
-  )
+    )
 }
 
 export default CarPage

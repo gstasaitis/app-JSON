@@ -3,20 +3,30 @@ import { Link } from "react-router-dom";
 
 const AddCarPage = () => {
 
-    const [carName, setCarName] = useState('');
-    const [carPicture, setCarPicture] = useState('');
-    const [price, setPrice] = useState('');
-    const [carType, setCarType] = useState('Basic');
-    const [carYear, setCarYear] = useState('');
-    const [engineLiters, setEngineLiters] = useState('');
-    const [gasType, setGasType] = useState('Petrol');
-    const [transmissionType, setTransmissionType] = useState('Automatic');
-    const [seatCount, setSeatCount] = useState('');
+  const [carName, setCarName] = useState('');
+  const [carPicture, setCarPicture] = useState('');
+  const [price, setPrice] = useState('');
+  const [carType, setCarType] = useState('Basic');
+  const [carYear, setCarYear] = useState('');
+  const [engineLiters, setEngineLiters] = useState('');
+  const [gasType, setGasType] = useState('Petrol');
+  const [transmissionType, setTransmissionType] = useState('Automatic');
+  const [seatCount, setSeatCount] = useState('');
 
-    const handleSubmit = (event) => {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Add your logic to handle form submission (e.g., API call, state update, etc.)
-    console.log('Form submitted:', {
+
+    const API = "http://localhost:4000/cars";
+
+    const postCarData = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
         carName,
         carPicture,
         price,
@@ -26,8 +36,29 @@ const AddCarPage = () => {
         gasType,
         transmissionType,
         seatCount,
-    });
+      })
+    };
+
+    try {
+      setLoading(true);
+      const response = await fetch(API, postCarData);
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const result = await response.json();
+      console.log('Car added successfully:', result);
+
+
+    } catch (error) {
+      console.error('Error adding car:', error.message);
+      setError('Failed to add car. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
+
   return (
     <>
     <div className="carnav">
@@ -126,9 +157,10 @@ const AddCarPage = () => {
         </label>
         </div>
         <div>
-        <button className="ui-btn" type="submit">
+        {error && <div className="error-message">{error}</div>}
+        <button className="ui-btn" type="submit" disabled={loading}>
             <span>
-                Add Car
+              <span>{loading ? 'Adding Car...' : 'Add Car'}</span>
             </span> 
         </button>
         </div>
