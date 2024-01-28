@@ -49,6 +49,9 @@
 }
 
 .grid {
+    background: url(./src/media/images/bgcity.jpg) no-repeat, linear-gradient(to bottom, #1b1257, #3a6186);
+    background-position: center;
+    background-size: cover;
     padding: 25px;
     display: flex;
     gap: 5px;
