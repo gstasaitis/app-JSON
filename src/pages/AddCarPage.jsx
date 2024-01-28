@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 const AddCarPage = () => {
 
@@ -15,6 +15,8 @@ const AddCarPage = () => {
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  const [navigateToCars, setNavigateToCars] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -49,6 +51,8 @@ const AddCarPage = () => {
 
       const result = await response.json();
       console.log('Car added successfully:', result);
+      alert("car added")
+      setNavigateToCars(true);
 
 
     } catch (error) {
@@ -61,6 +65,7 @@ const AddCarPage = () => {
 
   return (
     <>
+    {navigateToCars && <Navigate to="/cars" />}
     <div className="carnav">
         <Link to="/cars">
           <button className="button">

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 const Pricing = () => {
   return (
-    <div className="pricinglist">
+    <div id="prices" className="pricinglist">
         <div className="pricinghead">
             <h1>PRICES</h1>
         </div>

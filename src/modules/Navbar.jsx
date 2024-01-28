@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { GiCartwheel } from "react-icons/gi";
 
 const Navbar = () => {
@@ -19,7 +19,7 @@ const Navbar = () => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 60;
   
-      const sections = ["home", "top", "cars", "team", "faq", "contact"];
+      const sections = ["home", "prices", "top", "cars", "team", "faq", "contact"];
   
       let foundActiveSection = false;
   
@@ -72,6 +72,12 @@ const Navbar = () => {
             onClick={() => handleNavClick("cars")}
           >
             Cars
+          </li>
+          <li
+            className={`navbutton ${activeSection === "prices" ? "active" : ""}`}
+            onClick={() => handleNavClick("prices")}
+          >
+            Prices
           </li>
           <li
             className={`navbutton ${activeSection === "team" ? "active" : ""}`}

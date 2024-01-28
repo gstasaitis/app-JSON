@@ -112,13 +112,19 @@ return (
                     </div>
                 </div>
                 <div className="description">
-                    <p><FaEuroSign /> {cars.price}/24h</p>
-                    <p><GiCarWheel/> {cars.carType}</p>
-                    <p><FaCalendarAlt /> {cars.carYear}</p>
-                    <p><TbEngine /> {cars.engineLiters}l</p>
-                    <p><BsFillFuelPumpFill /> {cars.gasType}</p>
-                    <p><GiGearStick /> {cars.transmissionType}</p>
-                    <p><MdOutlineAirlineSeatLegroomExtra /> {cars.seatCount}</p>
+                    <div className="first-section">
+                        <p><FaEuroSign /> {cars.price}/24h</p>
+                        <p><TbEngine /> {cars.engineLiters}l</p>
+                    </div>
+                    <div className="second-section">
+                        <p><GiCarWheel/> {cars.carType}</p>
+                        <p><BsFillFuelPumpFill /> {cars.gasType}</p>
+                    </div>
+                    <div className="third-section">
+                        <p><FaCalendarAlt /> {cars.carYear}</p>
+                        <p><GiGearStick /> {cars.transmissionType}</p>
+                        <p><MdOutlineAirlineSeatLegroomExtra /> {cars.seatCount}</p>
+                    </div>
                 </div>
             </div>
             ))

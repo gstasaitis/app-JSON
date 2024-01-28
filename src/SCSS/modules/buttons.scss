@@ -26,6 +26,10 @@
     touch-action: manipulation;
     vertical-align: baseline;
     white-space: nowrap;
+
+    &.active { 
+        background: $lightest;
+    }
 }
 
 .button:before {
