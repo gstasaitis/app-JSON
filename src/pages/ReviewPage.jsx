@@ -8,7 +8,6 @@ import { FaCalendarAlt } from "react-icons/fa";
 import { MdDeleteForever, MdOutlineAirlineSeatLegroomExtra } from "react-icons/md";
 import { Link, useParams } from "react-router-dom";
 import AddReviewForm from "../modules/AddReview";
-import { BiSolidEditAlt } from "react-icons/bi";
 
 const ReviewPage = () => {
   const [car, setCar] = useState(null);
