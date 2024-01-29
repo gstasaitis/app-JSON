@@ -11,6 +11,8 @@ import AddCarPage from "./pages/AddCarPage";
 import AddTeamPage from "./pages/AddTeamPage";
 import TeamPage from "./pages/TeamPage";
 import CarPage from "./pages/CarPage";
+import Page404 from './pages/Page404';
+import ReviewPage from './pages/ReviewPage';
 
 function App() {
   return (
@@ -35,6 +37,8 @@ function App() {
         <Route path="/add-team" element={<AddTeamPage />} />
         <Route path="/team" element={<TeamPage />} />
         <Route path="/cars" element={<CarPage />} />
+        <Route path="/reviews/:id" element={<ReviewPage/>}/>
+        <Route path="/*" element={<Page404/>}/>
       </Routes>
     </Router>
   );
