@@ -41,11 +41,11 @@ const Team = () => {
                     <FaPhone /> +{member.phone}
                     </p>
                     <div className="socials">
-                    <a href=""><FaTiktok /></a>
-                    <a href=""><FaInstagram /></a>
-                    <a href=""><CiLinkedin /></a>
-                    <a href=""><FaFacebookSquare /></a>
-                    <a href=""><LuMailCheck /></a>
+                        <a href=""><FaTiktok /></a>
+                        <a href=""><FaInstagram /></a>
+                        <a href=""><CiLinkedin /></a>
+                        <a href=""><FaFacebookSquare /></a>
+                        <a href=""><LuMailCheck /></a>
                     </div>
                 </div>
                 </div>

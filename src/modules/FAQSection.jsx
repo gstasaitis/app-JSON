@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import FAQdata from './data/FAQdata';
 import { MdOutlineExpandMore, MdOutlineExpandLess } from "react-icons/md";
 
@@ -17,13 +18,20 @@ const FAQSection = () => {
     };
 
     return (
-        <div id='faq' className="faqsection">
-            <div className="faqhead">
-                <h1>FAQ</h1>
-            </div>
-            <div className="faq-content">
+    <div id='faq' className="faqsection">
+        <div className="faqhead">
+            <h1>FAQ</h1>
+        </div>
+        <div className="faq-content">
+            <AnimatePresence>
                 {FAQdata.map((faq, index) => (
-                    <div key={index} className="faq-item">
+                    <motion.div
+                        key={index}
+                        className="faq-item"
+                        layout
+                        initial={{ borderRadius: 10 }}
+                        whileHover={{ borderRadius: 20 }}
+                    >
                         <div className="faq-question" onClick={() => toggleQuestion(index)}>
                             <div className="space">
                                 <h3>{faq.question}</h3>
@@ -33,15 +41,25 @@ const FAQSection = () => {
                             </div>
                             <span className={`arrow ${isOpen[index] ? 'open' : ''}`}> </span>
                         </div>
-                        {isOpen[index] && (
-                            <div className="faq-answer">
-                                <p>{faq.answer}</p>
-                            </div>
-                        )}
-                    </div>
+                        <AnimatePresence>
+                            {isOpen[index] && (
+                                <motion.div
+                                    key="answer"
+                                    className="faq-answer"
+                                    initial={{ opacity: 0, height: 0 }}
+                                    animate={{ opacity: 1, height: 'auto' }}
+                                    exit={{ opacity: 0, height: 0 }}
+                                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                                >
+                                    <p>{faq.answer}</p>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    </motion.div>
                 ))}
-            </div>
+            </AnimatePresence>
         </div>
+    </div>
     );
 };
 

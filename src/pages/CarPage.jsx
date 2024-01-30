@@ -7,6 +7,7 @@ import { FaEuroSign } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Loading from "../modules/Loading";
+import { motion } from "framer-motion";
 
 const CarPage = () => {
     const [carsList, setCarsList] = useState([]);
@@ -34,7 +35,7 @@ const CarPage = () => {
     useEffect(() => {
         localStorage.setItem("filterCriteria", filterCriteria);
         handleFilter(filterCriteria);
-    }, [filterCriteria]);
+    }, );
 
     const handleDelete = (id) => {
         fetch(`http://localhost:4000/cars/${id}`, { method: "DELETE" })
@@ -78,90 +79,82 @@ const CarPage = () => {
             <div className="filtersection">
             <div className="buttons">
                 <button
-                className={`button all ${
-                    filterCriteria === "All" ? "active" : ""
-                }`}
-                onClick={() => handleFilter("All")}
-                >
-                <span>All</span>
+                    className={`button all ${
+                        filterCriteria === "All" ? "active" : ""
+                    }`}
+                    onClick={() => handleFilter("All")}
+                    >
+                    <span>All</span>
                 </button>
                 <button
-                className={`button ${filterCriteria === "SUV" ? "active" : ""}`}
-                onClick={() => handleFilter("SUV")}
-                >
-                <span>SUV</span>
+                    className={`button ${filterCriteria === "SUV" ? "active" : ""}`}
+                    onClick={() => handleFilter("SUV")}
+                    >
+                    <span>SUV</span>
+                </button>
+                <button
+                    className={`button ${
+                        filterCriteria === "Basic" ? "active" : ""
+                    }`}
+                    onClick={() => handleFilter("Basic")}
+                    >
+                    <span>BASIC</span>
                 </button>
                 <button
                 className={`button ${
-                    filterCriteria === "Basic" ? "active" : ""
-                }`}
-                onClick={() => handleFilter("Basic")}
-                >
-                <span>BASIC</span>
-                </button>
-                <button
-                className={`button ${
-                    filterCriteria === "Sports" ? "active" : ""
-                }`}
-                onClick={() => handleFilter("Sports")}
-                >
-                <span>SPORTS</span>
+                        filterCriteria === "Sports" ? "active" : ""
+                    }`}
+                    onClick={() => handleFilter("Sports")}
+                    >
+                    <span>SPORTS</span>
                 </button>
             </div>
             </div>
             <div className="grid">
-            {!filteredCars ? (
-                <Loading />
-            ) : (
-                filteredCars.map((car) => (
-                <div className="car" key={car.id}>
+        {!filteredCars ? (
+        <Loading />
+        ) : (
+        filteredCars.map((car, index) => (
+            <motion.div
+            key={car.id}
+            className="car"
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: index * 0.1 }}
+                    >
                     <div className="carname">
-                    <img src={car.carPicture} alt={car.carName} />
-                    <h2>{car.carName}</h2>
-                    <div className="controls">
-                        <button
-                        onClick={() => handleDelete(car.id)}
-                        className="fifth"
-                        >
-                        DELETE
-                        </button>
-                        <Link to={`/reviews/${car.id}`}>
-                        <button className="fifth">
-                            Show Reviews
-                        </button>
-                        </Link>
-                    </div>
+                        <img src={car.carPicture} alt={car.carName} />
+                        <h2>{car.carName}</h2>
+                        <div className="controls">
+                            <button
+                            onClick={() => handleDelete(car.id)}
+                            className="fifth"
+                            >
+                            DELETE
+                            </button>
+                            <Link to={`/reviews/${car.id}`}>
+                            <button className="fifth">
+                                Show Reviews
+                            </button>
+                            </Link>
+                        </div>
                     </div>
                     <div className="description">
-                    <div className="first-section">
-                        <p>
-                        <FaEuroSign /> {car.price}/24h
-                        </p>
-                        <p>
-                        <TbEngine /> {car.engineLiters}l
-                        </p>
+                        <div className="first-section">
+                            <p><FaEuroSign /> {car.price}/24h</p>
+                            <p><TbEngine /> {car.engineLiters}l</p>
+                        </div>
+                        <div className="second-section">
+                            <p><GiCarWheel /> {car.carType}</p>
+                            <p><BsFillFuelPumpFill /> {car.gasType}</p>
+                        </div>
+                        <div className="third-section">
+                            <p><FaCalendarAlt /> {car.carYear}</p>
+                            <p><GiGearStick /> {car.transmissionType}</p>
+                            <p><MdOutlineAirlineSeatLegroomExtra /> {car.seatCount}</p>
+                        </div>
                     </div>
-                    <div className="second-section">
-                        <p>
-                        <GiCarWheel /> {car.carType}
-                        </p>
-                        <p>
-                        <BsFillFuelPumpFill /> {car.gasType}
-                        </p>
-                    </div>
-                    <div className="third-section">
-                        <p>
-                        <FaCalendarAlt /> {car.carYear}
-                        </p>
-                        <p>
-                        <GiGearStick /> {car.transmissionType}
-                        </p>
-                        <p>
-                        <MdOutlineAirlineSeatLegroomExtra /> {car.seatCount}
-                        </p>
-                    </div>
-                    </div>
-                </div>
+                    </motion.div>
                 ))
             )}
             </div>

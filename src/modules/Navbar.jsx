@@ -3,6 +3,7 @@ import { GiCartwheel } from "react-icons/gi";
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState("home");
+  const [showBurgerMenu, setShowBurgerMenu] = useState(false);
 
   const handleNavClick = (section) => {
     setActiveSection(section);
@@ -15,44 +16,46 @@ const Navbar = () => {
     }
   };
 
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY + 60;
+    const sections = ["home", "prices", "top", "cars", "team", "faq", "contact"];
+
+    let foundActiveSection = false;
+
+    for (const section of sections) {
+      const targetElement = document.getElementById(section);
+
+      if (
+        targetElement &&
+        scrollPosition >= targetElement.offsetTop &&
+        scrollPosition < targetElement.offsetTop + targetElement.offsetHeight
+      ) {
+        setActiveSection(section);
+        foundActiveSection = true;
+        break;
+      }
+    }
+
+    if (!foundActiveSection) {
+      setActiveSection(sections[sections.length - 1]);
+    }
+  };
+
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + 60;
-  
-      const sections = ["home", "prices", "top", "cars", "team", "faq", "contact"];
-  
-      let foundActiveSection = false;
-  
-      for (const section of sections) {
-        const targetElement = document.getElementById(section);
-  
-        if (
-          targetElement &&
-          scrollPosition >= targetElement.offsetTop &&
-          scrollPosition < targetElement.offsetTop + targetElement.offsetHeight
-        ) {
-          setActiveSection(section);
-          foundActiveSection = true;
-          break;
-        }
-      }
-  
-      if (!foundActiveSection) {
-        setActiveSection(sections[sections.length - 1]);
-      }
-    };
-  
     window.addEventListener("scroll", handleScroll);
-  
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  
+
+  const toggleBurgerMenu = () => {
+    setShowBurgerMenu(!showBurgerMenu);
+  };
 
   return (
     <div id="top" className="glass">
-      <div className="navbar">
+      <div className={`navbar ${showBurgerMenu ? "burger-menu" : ""}`}>
         <a onClick={() => handleNavClick("top")}>
           <div className="logo">
             <h3>Horiz<GiCartwheel />n</h3>
@@ -60,7 +63,13 @@ const Navbar = () => {
           </div>
         </a>
 
-        <ul>
+        <div className="burger-icon" onClick={toggleBurgerMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <ul className={`nav-links ${showBurgerMenu ? "show" : ""}`}>
           <li
             className={`navbutton ${activeSection === "home" ? "active" : ""}`}
             onClick={() => handleNavClick("home")}
@@ -92,9 +101,7 @@ const Navbar = () => {
             FAQ
           </li>
           <li
-            className={`navbutton ${
-              activeSection === "contact" ? "active" : ""
-            }`}
+            className={`navbutton ${activeSection === "contact" ? "active" : ""}`}
             onClick={() => handleNavClick("contact")}
           >
             Contact US

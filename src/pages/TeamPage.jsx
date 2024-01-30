@@ -28,7 +28,7 @@ const TeamPage = () => {
     }, []);
 
   return (
-      <>
+    <>
         <div className="teambg">
         <div className="team-pag">
             <div className="carnav">

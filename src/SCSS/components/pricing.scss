@@ -20,7 +20,6 @@
     background: $purple;
     margin-top: 50px;
     border-radius: 10px 10px 0 0;
-
 }
 
 #pricing-table {
@@ -44,8 +43,6 @@
     clear: both
   }
 
-  /* --------------- */ 
-
   #pricing-table .plan {
     background: #fff;      
     border: 1px solid #ddd;
@@ -53,7 +50,7 @@
     padding: 20px;
     width: 30%;
     float: left;
-    _display: inline; /* IE6 double margin fix */
+    _display: inline;
     position: relative;
     margin: 0 5px;
     box-shadow: 0 2px 2px -1px rgba(0,0,0,.3);    
@@ -112,8 +109,6 @@
     border-bottom-color: $lighter;
   }
 
-  /* --------------- */
-
   #pricing-table .price{
     font-size: 45px;
   }
@@ -125,8 +120,6 @@
     color: #999;
   }
 
-  /* --------------- */
-
   #pricing-table ul {
     margin: 20px 0;
     padding: 0;
@@ -136,9 +129,7 @@
   #pricing-table li {
     padding: 20px 0;
   }
-  
-  /* --------------- */
-    
+      
   #pricing-table .signup {
     width: 80%;
     position: relative;

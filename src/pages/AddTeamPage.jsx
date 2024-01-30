@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const AddTeamPage = () => {
-  const [fullName, setFullName] = useState('');
-  const [occupation, setOccupation] = useState('');
-  const [phone, setPhone] = useState('');
-  const [pictureUrl, setPictureUrl] = useState('');
+    const [fullName, setFullName] = useState('');
+    const [occupation, setOccupation] = useState('');
+    const [phone, setPhone] = useState('');
+    const [pictureUrl, setPictureUrl] = useState('');
 
-  const handleSubmit = async (event) => {
+    const handleSubmit = async (event) => {
     event.preventDefault();
 
     const API = "http://localhost:4000/employees";
@@ -45,7 +45,9 @@ const AddTeamPage = () => {
     };
 
 return (
-<>
+    <>
+    <div className="wrapper">
+
     <div className="carnav">
     <Link to="/team">
         <button className="button">
@@ -100,7 +102,8 @@ return (
         </button>
     </form>
     </div>
-</>
+    </div>
+    </>
     );
 };
 

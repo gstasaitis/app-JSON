@@ -155,3 +155,42 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .carnav {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .carpage {
+        overflow: hidden;
+    }
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        position: sticky;
+    }
+}
+
+@media (max-width: 480px) {
+    .carnav {
+        padding-left: 20px;
+    }
+    .car {
+        max-width: 410px;
+    }
+    .filtersection {
+        display: none;
+    }
+    .controls {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+    .grid {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+}

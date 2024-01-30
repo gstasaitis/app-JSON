@@ -68,6 +68,7 @@ const HomePage = () => {
     </div>
     </div>
     <div className="whyus">
+        <div className="flexinwhyus">
     <div className="cars">
         <IoCarSport />
         <p className="blue">{carsInFleet > 0 ? carsInFleet : '1'}+</p>
@@ -87,6 +88,7 @@ const HomePage = () => {
         <FaCreditCard />
         <p className="blue">{transactionsCount > 0 ? transactionsCount : '1'}+</p>
         <p>Safe Transactions!</p>
+    </div>
     </div>
     </div>
     </>

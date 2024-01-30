@@ -33,13 +33,13 @@ function App() {
             </>
           }
         />
-        <Route path="/add-car" element={<AddCarPage />} />
-        <Route path="/add-team" element={<AddTeamPage />} />
-        <Route path="/team" element={<TeamPage />} />
-        <Route path="/cars" element={<CarPage />} />
-        <Route path="/reviews/:id" element={<ReviewPage/>}/>
-        <Route path="/*" element={<Page404/>}/>
-      </Routes>
+          <Route path="/add-car" element={<AddCarPage />} />
+          <Route path="/add-team" element={<AddTeamPage />} />
+          <Route path="/team" element={<TeamPage />} />
+          <Route path="/cars" element={<CarPage />} />
+          <Route path="/reviews/:id" element={<ReviewPage/>}/>
+          <Route path="/*" element={<Page404/>}/>
+        </Routes>
     </Router>
   );
 }

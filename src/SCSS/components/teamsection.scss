@@ -34,14 +34,13 @@
         position: relative;
         display: block;
         height: 80px;
-  
         display: flex;
         flex-flow: column nowrap;
         text-align: center;
         justify-content: center;
-        
         transition: all 0.75s ease-in-out;
       }
+
       &:after {
         position: absolute;
         top: 10px;
@@ -76,12 +75,10 @@
         margin: auto;
         margin-top: 30px;
         gap: 20px;
-        
         svg{
             font-size: 2em;
             color: $white;
             transition: .5s ease;
-
             &:hover {
                 scale: 1.5;
                 color: $purple;
@@ -117,22 +114,22 @@
     } // demo
     &.a50{
       .teamcard__content {
-         top: 50%;
+          top: 50%;
         &-inner{
           height: 50%;}
       }
       &:hover {
         .teamcard__content {
-           top: 0;
+            top: 0;
           &-inner{
             height: 100%;}
         }      
       }
     }
     &.a100{
-       &:hover {
+        &:hover {
         .teamcard__content {
-           top: calc(100% - 80px);
+            top: calc(100% - 80px);
           &-inner{
             height: 80px;}
         }

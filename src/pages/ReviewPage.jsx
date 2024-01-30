@@ -8,6 +8,8 @@ import { FaCalendarAlt } from "react-icons/fa";
 import { MdDeleteForever, MdOutlineAirlineSeatLegroomExtra } from "react-icons/md";
 import { Link, useParams } from "react-router-dom";
 import AddReviewForm from "../modules/AddReview";
+import { motion } from "framer-motion";
+
 
 const ReviewPage = () => {
   const [car, setCar] = useState(null);
@@ -68,10 +70,7 @@ const ReviewPage = () => {
       if (!response.ok) {
         throw new Error("Failed to edit review");
       }
-
-      // Reset editing state after successful edit
       setEditingReviewId(null);
-
       fetchCarAndReviews();
     } catch (error) {
       console.error("Error editing review:", error.message);
@@ -83,11 +82,9 @@ const ReviewPage = () => {
       const response = await fetch(`http://localhost:4000/reviews/${reviewId}`, {
         method: "DELETE",
       });
-
       if (!response.ok) {
         throw new Error("Failed to delete review");
       }
-
       fetchCarAndReviews();
     } catch (error) {
       console.error("Error deleting review:", error.message);
@@ -131,60 +128,52 @@ const ReviewPage = () => {
                 <h2>{car.carName}</h2>
               </div>
               <div className="description">
-                <div className="first-section">
-                  <p>
-                    <FaEuroSign /> {car.price}/24h
-                  </p>
-                  <p>
-                    <TbEngine /> {car.engineLiters}l
-                  </p>
-                </div>
+                  <div className="first-section">
+                    <p><FaEuroSign /> {car.price}/24h</p>
+                    <p><TbEngine /> {car.engineLiters}l</p>
+                  </div>
                 <div className="second-section">
-                  <p>
-                    <GiCarWheel /> {car.carType}
-                  </p>
-                  <p>
-                    <BsFillFuelPumpFill /> {car.gasType}
-                  </p>
+                  <p><GiCarWheel /> {car.carType}</p>
+                  <p><BsFillFuelPumpFill /> {car.gasType}</p>
                 </div>
                 <div className="third-section">
-                  <p>
-                    <FaCalendarAlt /> {car.carYear}
-                  </p>
-                  <p>
-                    <GiGearStick /> {car.transmissionType}
-                  </p>
-                  <p>
-                    <MdOutlineAirlineSeatLegroomExtra /> {car.seatCount}
-                  </p>
+                  <p><FaCalendarAlt /> {car.carYear}</p>
+                  <p><GiGearStick /> {car.transmissionType}</p>
+                  <p><MdOutlineAirlineSeatLegroomExtra /> {car.seatCount}</p>
                 </div>
               </div>
             </div>
             <div className="reviews">
-              {reviews.map((review) => (
-                <div className="review" key={review.id}>
-                  <p>{review.author}</p>
-                  <h3>{review.title}</h3>
-                  <p>{review.comment}</p>
-                  <p>{renderStars(review.rating)}</p>
-                  <div className="ctrlbuttons">
-                    {/* <button
-                      className="editbtn"
-                      onClick={() => setEditingReviewId(review.id)}
-                    >
-                      <BiSolidEditAlt />
-                    </button> */}
-                    <button
-                      className="delbtn"
-                      onClick={() => handleDeleteReview(review.id)}
-                    >
-                      <MdDeleteForever />
-                    </button>
-                  </div>
-                </div>
-              ))}
-            </div>
+      {reviews.map((review, index) => (
+        <motion.div
+          key={review.id}
+          className="review"
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: index * 0.1 }}
+        >
+          <p>{review.author}</p>
+          <h3>{review.title}</h3>
+          <p>{review.comment}</p>
+          <p>{renderStars(review.rating)}</p>
+          <div className="ctrlbuttons">
+            {/* <button
+              className="editbtn"
+              onClick={() => setEditingReviewId(review.id)}
+            >
+              <BiSolidEditAlt />
+            </button> */}
+            <button
+              className="delbtn"
+              onClick={() => handleDeleteReview(review.id)}
+            >
+              <MdDeleteForever />
+            </button>
           </div>
+      </motion.div>
+      ))}
+    </div>
+  </div>
         ) : (
           <Loading />
         )}

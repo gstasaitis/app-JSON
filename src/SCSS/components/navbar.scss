@@ -1,59 +1,111 @@
-.glass{
-    width: 100%;
-    height: 60px;
-    background: $glass;
-    color: $white;
+.glass {
+  width: 100%;
+  height: 60px;
+  background: $glass;
+  color: $white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  box-shadow: 0px 0px 18px #888888;
+
+  .navbar {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1;
-    box-shadow: 0px 0px 18px #888888;
+    z-index: 1000;
+    transition: background-color 0.3s ease-in-out;
 
-    .navbar {
-        width: 90%;
-        margin: auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 0;
-        position: fixed;
-        top: 0;
+    a {
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    h3:hover {
+      color: $lightest;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: $white;
+    }
+
+    .burger-icon {
+      display: none;
+      cursor: pointer;
+
+      span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #fff; 
+        color: black;
+        margin: 5px 0;
+      }
+    }
+
+    .nav-links {
+      display: flex;
+      flex-direction: row;
+
+      li {
+        position: relative;
+        cursor: pointer;
+        padding: 10px;
+        transition: color 0.3s ease-in-out;
+
+        .navbutton{
+            background: black;
+        }
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .burger-icon {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
         left: 0;
-        right: 0;
-        z-index: 1000;
-        transition: background-color 0.3s ease-in-out;
-    
-        a {
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
+        width: 100%;
+        background-color: $white;
+        padding: 10px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+
+        &.show {
+          display: flex;
         }
 
-        h3:hover{
-                color: $lightest;
+        li{
+            background: $dark;
         }
 
-        .logo {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: $white;
-            
+        .navbutton {
+          padding: 10px;
+          text-align: center;
+          border-bottom: 1px solid #ddd;
+          
+          &.active {
+            background-color: $lightest;
+          }
+        }
+      }
     }
-    
-        ul {
-            display: flex;
-            flex-direction: row;
-
-        }
-    
-        li {
-            position: relative;
-            cursor: pointer;
-            padding: 10px;
-            transition: color 0.3s ease-in-out;
-        }
-    }
+  }
 }

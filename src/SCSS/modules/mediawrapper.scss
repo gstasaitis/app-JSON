@@ -1,0 +1,155 @@
+.flexinwhyus {
+    display: flex;
+    width: 100%;
+}
+@media (max-width: 768px) {
+    body {
+        background-size: fit;
+        background-repeat: repeat;
+    }
+
+    #root {
+        width: 120%;
+        height: auto;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .top {
+        width: 425px;
+    }
+
+    .homepage {
+        display: flex;
+        margin: auto;
+        justify-content: center !important;
+        width: 100%;
+
+        .homecontent {
+            width: 480px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            h1, h2, p {
+                width: 455px;
+                text-align: center;
+            }
+        }
+
+        .video {
+            display: flex;
+            justify-content: center;
+            margin: auto;
+            width: 100%;
+            min-height: 100%;
+            min-width: 100vw;
+        }
+    }
+
+    .flexinwhyus {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        .cars, .pricing, .employees, .safepay{
+            width: 100% !important;
+            border-radius: 0px !important;
+        }
+        .safepay {
+            border-radius: 0 0 10px 10px !important;
+        }
+    }
+    .react-slideshow-container {
+        max-width: 100%;
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contactus {
+        display: flex;
+        flex-direction: column;
+        .form, .contacts, .map {
+            width: 100% !important;
+            border: none !important;
+        }
+    }
+
+}
+
+@media (max-width: 425px) {
+    body {
+        background-size: fit;
+        background-repeat: repeat;
+    }
+
+    #root {
+        width: 120%;
+        height: auto;
+    }
+
+    .top {
+        width: 425px;
+    }
+
+    .homepage {
+        width: 100%;
+
+        .homecontent {
+            width: 480px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+
+            h1, h2, p {
+                width: 455px;
+                text-align: center;
+            }
+        }
+
+        .video {
+            min-height: 100%;
+            min-width: 100vw;
+        }
+    }
+
+    .flexinwhyus {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        .cars, .pricing, .employees, .safepay{
+            width: 100% !important;
+            border-radius: 0px !important;
+        }
+        .safepay {
+            border-radius: 0 0 10px 10px !important;
+        }
+    }
+
+    #pricing-table {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 60px;
+
+
+        .plan {
+            width: 100% !important;
+            display: flex;
+            flex-direction: column;
+
+            .plan-2, .popular-plan {
+                position: relative !important;
+                border: 2px solid red;
+                padding: 0;
+            }
+        }
+    }
+}

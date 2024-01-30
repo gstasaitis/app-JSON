@@ -43,14 +43,10 @@
         --hover-btn-color: rgb(255, 0, 255);
         --default-btn-color: #fff;
         --font-size: 16px;
-        /* 👆 this field should not be empty */
         --font-weight: 600;
         --font-family: Menlo,Roboto Mono,monospace;
-        /* 👆 this field should not be empty */
     }
-    
-      /* button settings 👆 */
-    
+        
     .ui-btn {
         box-sizing: border-box;
         padding: var(--btn-padding);
@@ -188,4 +184,14 @@
         right: 0;
     }
     }
+}
+
+@media (max-width: 768px) {
+    .add-car-form {
+        max-width: 768px;
+    }
+}
+
+@media (max-width: 480px) {
+
 }

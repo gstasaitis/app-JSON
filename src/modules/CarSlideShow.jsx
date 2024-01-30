@@ -1,11 +1,32 @@
+import { useEffect, useState } from 'react';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 
 const CarSlideShow = () => {
+    const [slidesToShow, setSlidesToShow] = useState(1);
+    useEffect(() => {
+        const handleResize = () => {
+        if (window.innerWidth >= 750) {
+        setSlidesToShow(3);
+        } else if (window.innerWidth <= 450) {
+        setSlidesToShow(2);
+        } else {
+        setSlidesToShow(1);
+        }
+    };
+            handleResize();
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+        window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+    
     
   return (
     <div className='carslideshow'>
-            <Slide slidesToScroll={1} slidesToShow={4} indicators={true}>
+            <Slide slidesToScroll={1} slidesToShow={slidesToShow} indicators={true}>
         <div className='slide'>
         <article className="card">
             <img
