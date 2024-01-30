@@ -7,7 +7,7 @@ const CarSlideShow = () => {
     useEffect(() => {
         const handleResize = () => {
         if (window.innerWidth >= 750) {
-        setSlidesToShow(3);
+        setSlidesToShow(4);
         } else if (window.innerWidth <= 450) {
         setSlidesToShow(2);
         } else {
