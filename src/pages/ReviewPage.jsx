@@ -5,17 +5,19 @@ import { TbEngine } from "react-icons/tb";
 import { GiCarWheel, GiGearStick } from "react-icons/gi";
 import { BsFillFuelPumpFill } from "react-icons/bs";
 import { FaCalendarAlt } from "react-icons/fa";
+import { BiSolidMessageEdit } from "react-icons/bi";
 import { MdDeleteForever, MdOutlineAirlineSeatLegroomExtra } from "react-icons/md";
 import { Link, useParams } from "react-router-dom";
 import AddReviewForm from "../modules/AddReview";
 import { motion } from "framer-motion";
-
 
 const ReviewPage = () => {
   const [car, setCar] = useState(null);
   const [reviews, setReviews] = useState([]);
   const [editingReviewId, setEditingReviewId] = useState(null);
   const { id } = useParams();
+  const [comment, setComment] = useState('');
+
 
   const fetchCarAndReviews = async () => {
     try {
@@ -101,6 +103,11 @@ const ReviewPage = () => {
     return stars;
   };
 
+  const toggleEditingReview = (reviewId) => {
+    setEditingReviewId((prevId) => (prevId === reviewId ? null : reviewId));
+    setComment(reviews.find((r) => r.id === reviewId).comment);
+  };
+  
   return (
     <>
       <div className="carnav">
@@ -144,36 +151,54 @@ const ReviewPage = () => {
               </div>
             </div>
             <div className="reviews">
-      {reviews.map((review, index) => (
-        <motion.div
-          key={review.id}
-          className="review"
-          initial={{ y: -50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: index * 0.1 }}
-        >
-          <p>{review.author}</p>
-          <h3>{review.title}</h3>
-          <p>{review.comment}</p>
-          <p>{renderStars(review.rating)}</p>
-          <div className="ctrlbuttons">
-            {/* <button
-              className="editbtn"
-              onClick={() => setEditingReviewId(review.id)}
-            >
-              <BiSolidEditAlt />
-            </button> */}
-            <button
-              className="delbtn"
-              onClick={() => handleDeleteReview(review.id)}
-            >
-              <MdDeleteForever />
-            </button>
+              {reviews.map((review, index) => (
+                <motion.div
+                  key={review.id}
+                  className="review"
+                  initial={{ y: -50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <p>{review.author}</p>
+                  <h3>{review.title}</h3>
+                  {editingReviewId === review.id ? (
+                      <textarea
+                      className="editinput"
+                      type="text"
+                      value={comment}
+                      onChange={(e) => setComment(e.target.value)}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter') {
+                          e.preventDefault();
+                          handleEditReview({ ...review, comment });
+                          setEditingReviewId(null);
+                        }
+                      }}
+                      onBlur={() => handleEditReview({ ...review, comment })}
+                    />
+
+                    ) : (
+                      <p>{review.comment}</p>
+                    )}
+                    <p>{renderStars(review.rating)}</p>
+                  <div className="ctrlbuttons">
+                  <button
+                      className="editbtn"
+                      onClick={() => toggleEditingReview(review.id)}
+                    >
+                      <BiSolidMessageEdit />
+                    </button>
+                    <button
+                      className="delbtn"
+                      onClick={() => handleDeleteReview(review.id)}
+                    >
+                      <MdDeleteForever />
+                    </button>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
-      </motion.div>
-      ))}
-    </div>
-  </div>
         ) : (
           <Loading />
         )}
